@@ -119,110 +119,111 @@ nav ul li a {
 #menuBtn img {
   width: 20px;
   margin-top: 15px;
+ 
 }
 
 /* Feature Section */
 #feature {
-  width: 100%;
-  padding: 70px;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
   text-align: center;
 }
 
-.title-text p {
-  margin: 0 auto;
-  font-size: 20px;
+.title-text {
+  margin-bottom: 30px;
+}
+.title-text p{
+  margin: auto;
+  font-size: 20;
+  color: #009688;
   font-weight: bold;
-  color: #009689;
-  max-width: 800px;
-  display: inline-block;
   position: relative;
   z-index: 1;
+  display: inline-block;
 }
-
-.title-text p::after {
-  content: '';
-  width: 50px;
-  height: 35px;
-  background: linear-gradient(#019587, #fff);
-  position: absolute;
-  top: 0;
-  left: 0;
+.title-text p::after{
+content: "";
+width: 50px;
+height: 35px;
+background: linear-gradient(#009688,#fff);
+  position:absolute;
+  top:-20px;
+  left:0;
   z-index: -1;
   transform: rotate(10deg);
   border-top-left-radius: 35px;
   border-bottom-right-radius: 35px;
 }
 
-.title-text h1 {
-  font-size: 50px;
-}
-
 .feature-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  padding: 10px;
-  margin: 40px auto;
-  max-width: 1200px;
+  align-items: center;
   gap: 20px;
 }
 
-.feature-image,
-.feature-text {
-  flex: 1 1 calc(50% - 20px);
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 150, 136, 0.5)), url('images/Barbery6.png');
-  
-  background-size: cover;
-  
-}
-
-.feature-image img {
-  width: 70%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.feature-title {
-  font-size: 24px;
-  color: #009688;
-  margin: 20px 0;
+.feature-description, .feature-image {
+  flex: 1 1 400px; /* Both divs will take up equal space and shrink/grow as needed */
+  max-width: 500px;
   text-align: left;
 }
 
-.feature-description {
-  display: flex;
-  flex-direction: column;
+.feature-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .line-icon {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .line-icon i {
-  background-color: #009688;
-  color: white;
-  padding: 10px;
-  border-radius: 50%;
-  font-size: 16px;
-  margin-right: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-right: 10px;
+  font-size: 24px;
+  color: #009688; /* Icon color */
+  width: 40px; /* Adjust to match the font-size for a square border */
+  height: 40px; /* Adjust to match the font-size for a square border */
+  border-radius: 50%; /* Makes the border circular around the icon */
+  border: 1px solid #009688; /* Border color and thickness */
+  display: inline-flex; /* Aligns the icon within the border */
+  align-items: center; /* Centers the icon vertically */
+  justify-content: center; /* Centers the icon horizontally */
+  background-color: transparent; /* Optional: makes the background transparent */
 }
 
 .line-icon p {
   margin: 0;
   font-size: 16px;
+  color: #555;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feature-description, .feature-image {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .line-icon {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .feature-description, .feature-image {
+    max-width: 100%;
+  }
+}
+
 
 /* Image Section */
 .image-section {
@@ -461,7 +462,7 @@ nav ul li a {
   margin: 0; /* No margin by default */
   display: inline; /* Default behavior */
 }
-/* Styles for the reviews section */
+
 /* Styles for the reviews section */
 .reviews {
   padding: 20px;
@@ -520,3 +521,215 @@ nav ul li a {
     margin: 10px 0;
   }
 }
+.image-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .image-container {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    max-width: 100%;
+  }
+}
+.content-section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.content-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #b7b5b5;
+}
+
+.separator {
+  width: 200px;
+  height: 3px;
+  background-color:#fff;
+  margin: 10px auto 20px;
+}
+
+.content-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  margin: 0;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-title {
+    font-size: 22px;
+  }
+
+  .separator {
+    width: 40px;
+    height: 2px;
+  }
+
+  .content-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-title {
+    font-size: 20px;
+  }
+
+  .separator {
+    width: 30px;
+    height: 2px;
+  }
+
+  .content-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* Style the popup */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Popup content */
+.popup-content {
+  background-color: white;
+  margin: 10% auto; /* Adjusted for better responsiveness */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%; /* 90% width to fit smaller screens better */
+  max-width: 400px; /* Max width for larger screens */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* General button styling */
+button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #009688;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* Consistent button font size */
+}
+
+button:hover {
+  background-color: #00796b; /* Slightly darker shade on hover */
+}
+
+/* Textarea styling */
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical; /* Allow vertical resizing */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  .popup-content {
+    width: 80%; /* Reduce width on smaller screens */
+    margin: 20% auto; /* Adjusted top margin for smaller devices */
+  }
+
+  button {
+    font-size: 14px; /* Slightly smaller text on small screens */
+  }
+}
+
+@media (max-width: 400px) {
+  .popup-content {
+    width:80%; /* Maximize width on very small screens */
+    margin: 25% auto; /* Further adjust top margin */
+  }
+
+  .close {
+    font-size: 24px; /* Smaller close button on small screens */
+  }
+
+  button {
+    font-size: 14px; /* Adjust button font size */
+    padding: 8px; /* Smaller padding for better fit */
+  }
+}
+
+

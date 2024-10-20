@@ -68,31 +68,5 @@ window.onclick = function(event) {
 
 
 
-    // Show the booking form
-    document.getElementById("bookButton").addEventListener("click", function() {
-        document.getElementById("overlay").style.display = "block"; // Show the overlay
-        document.getElementById("bookingForm").style.display = "block"; // Show the booking form
-    });
 
-    // Close the booking form
-    document.getElementById("closeBooking").addEventListener("click", function() {
-        document.getElementById("overlay").style.display = "none"; // Hide the overlay
-        document.getElementById("bookingForm").style.display = "none"; // Hide the booking form
-    });
-
-    // Submit the booking form
-    document.getElementById("submitBooking").addEventListener("click", function() {
-        const name = document.getElementById("name").value; // Get the name from the input
-        const email = document.getElementById("email").value; // Get the email from the input
-        const date = document.getElementById("date").value; // Get the date from the input
-        const time = document.getElementById("time").value; // Get the time from the input
-
-        // Here you can send the information to the server
-        console.log(`Name: ${name}, Email: ${email}, Date: ${date}, Time: ${time}`);
-
-        // After successful submission, reset the form and close it
-        document.getElementById("bookingForm").reset(); // Reset the form fields
-        document.getElementById("overlay").style.display = "none"; // Hide the overlay
-        document.getElementById("bookingForm").style.display = "none"; // Hide the booking form
-    });
-
+    

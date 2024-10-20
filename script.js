@@ -5,6 +5,26 @@ var sidenav = document.getElementById("sidenav");
 var popup = document.getElementById("contactFormPopup");
 var btn = document.getElementById("contactButton");
 var span = document.getElementsByClassName("close")[0];
+const form = document.getElementById("contactForm")
+
+console.log(form);
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    console.log(formData.get('name'));
+
+    fetch('http://localhost:3000/api/contact', {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message'),
+        })
+    })
+});
 
 // Set the initial position of sidenav
 sidenav.style.right = "-250px";
@@ -69,30 +89,30 @@ window.onclick = function(event) {
 
 
     // Show the booking form
-    document.getElementById("bookButton").addEventListener("click", function() {
-        document.getElementById("overlay").style.display = "block"; // Show the overlay
-        document.getElementById("bookingForm").style.display = "block"; // Show the booking form
-    });
+    // document.getElementById("bookButton").addEventListener("click", function() {
+    //     document.getElementById("overlay").style.display = "block"; // Show the overlay
+    //     document.getElementById("bookingForm").style.display = "block"; // Show the booking form
+    // });
 
     // Close the booking form
-    document.getElementById("closeBooking").addEventListener("click", function() {
-        document.getElementById("overlay").style.display = "none"; // Hide the overlay
-        document.getElementById("bookingForm").style.display = "none"; // Hide the booking form
-    });
+    // document.getElementById("closeBooking").addEventListener("click", function() {
+    //     document.getElementById("overlay").style.display = "none"; // Hide the overlay
+    //     document.getElementById("bookingForm").style.display = "none"; // Hide the booking form
+    // });
 
     // Submit the booking form
-    document.getElementById("submitBooking").addEventListener("click", function() {
-        const name = document.getElementById("name").value; // Get the name from the input
-        const email = document.getElementById("email").value; // Get the email from the input
-        const date = document.getElementById("date").value; // Get the date from the input
-        const time = document.getElementById("time").value; // Get the time from the input
+    // document.getElementById("submitBooking").addEventListener("click", function() {
+    //     const name = document.getElementById("name").value; // Get the name from the input
+    //     const email = document.getElementById("email").value; // Get the email from the input
+    //     const date = document.getElementById("date").value; // Get the date from the input
+    //     const time = document.getElementById("time").value; // Get the time from the input
 
-        // Here you can send the information to the server
-        console.log(`Name: ${name}, Email: ${email}, Date: ${date}, Time: ${time}`);
+    //     // Here you can send the information to the server
+    //     console.log(`Name: ${name}, Email: ${email}, Date: ${date}, Time: ${time}`);
 
-        // After successful submission, reset the form and close it
-        document.getElementById("bookingForm").reset(); // Reset the form fields
-        document.getElementById("overlay").style.display = "none"; // Hide the overlay
-        document.getElementById("bookingForm").style.display = "none"; // Hide the booking form
-    });
+    //     // After successful submission, reset the form and close it
+    //     document.getElementById("bookingForm").reset(); // Reset the form fields
+    //     document.getElementById("overlay").style.display = "none"; // Hide the overlay
+    //     document.getElementById("bookingForm").style.display = "none"; // Hide the booking form
+    // });
 
